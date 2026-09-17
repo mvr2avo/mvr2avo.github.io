@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a reproducible problem with MVR2AVO
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve MVR2AVO. Do not attach confidential show files or production data.
+  - type: input
+    id: version
+    attributes:
+      label: MVR2AVO version
+      placeholder: e.g. 0.1.3
+    validations:
+      required: true
+  - type: input
+    id: titan
+    attributes:
+      label: Avolites Titan version
+      placeholder: e.g. Titan 17.1
+    validations:
+      required: true
+  - type: dropdown
+    id: app-type
+    attributes:
+      label: Application type
+      options:
+        - Windows installer
+        - Portable version
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open…
+        2. Select…
+        3. See error…
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional information
+      description: Add screenshots or non-confidential details if useful.

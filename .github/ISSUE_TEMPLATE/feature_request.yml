@@ -1,0 +1,29 @@
+name: Feature request
+description: Suggest an improvement for MVR2AVO
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for sharing your idea.
+  - type: textarea
+    id: need
+    attributes:
+      label: What problem would this solve?
+      description: Describe the workflow or limitation behind your request.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Suggested solution
+      description: Explain how you would like MVR2AVO to behave.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional information
+      description: Add screenshots or examples without confidential production data.

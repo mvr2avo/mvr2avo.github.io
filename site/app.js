@@ -21,10 +21,10 @@ async function showLatestVersion() {
     if (/^v\d+\.\d+\.\d+$/.test(release.tag_name)) {
       document.querySelector('#release-version').textContent = release.tag_name;
     }
-    const installer = release.assets?.find((asset) => asset.name === 'MVR2AVO-Setup-Windows.exe');
-    if (Number.isSafeInteger(installer?.download_count)) {
-      downloadCount.textContent = new Intl.NumberFormat('en-US').format(installer.download_count);
-    }
+    const windowsDownloads = (release.assets || [])
+      .filter((asset) => ['MVR2AVO-Setup-Windows.exe', 'MVR2AVO-Portable-Windows.exe'].includes(asset.name))
+      .reduce((total, asset) => total + (Number.isSafeInteger(asset.download_count) ? asset.download_count : 0), 0);
+    downloadCount.textContent = new Intl.NumberFormat('en-US').format(windowsDownloads);
   } catch {
     // Keep the last known version label if GitHub's API is unavailable.
   }

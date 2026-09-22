@@ -20,8 +20,4 @@ To verify a download on Windows, run `Get-FileHash -Algorithm SHA256 .\MVR2AVO-S
 
 [Open an issue](https://github.com/mvr2avo/mvr2avo.github.io/issues/new/choose) to report a problem or suggest an improvement. Please do not attach show files or confidential production data to public issues.
 
-## Website
-
-[mvr2avo.com](https://mvr2avo.com)
-
 MVR2AVO is an independent tool and is not an official Avolites or GDTF/MVR product.

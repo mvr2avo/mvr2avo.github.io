@@ -31,5 +31,4 @@ async function showLatestVersion() {
 }
 
 loadProjectLogo();
-recordVisit();
 showLatestVersion();

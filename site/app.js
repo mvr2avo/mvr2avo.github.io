@@ -4,6 +4,18 @@ const downloadCount = document.querySelector('#download-count');
 const downloadButton = document.querySelector('#download-button');
 document.querySelector('#year').textContent = new Date().getFullYear();
 
+async function loadProjectLogo() {
+  try {
+    const response = await fetch('assets/logo-512.base64');
+    if (!response.ok) return;
+    const source = `data:image/png;base64,${(await response.text()).trim()}`;
+    document.querySelectorAll('[data-logo]').forEach((image) => { image.src = source; });
+    document.querySelector('#favicon').href = source;
+  } catch {
+    // The page remains usable if the logo asset is temporarily unavailable.
+  }
+}
+
 async function showLatestVersion() {
   try {
     const response = await fetch('https://api.github.com/repos/mvr2avo/mvr2avo.github.io/releases/latest');
@@ -51,5 +63,6 @@ downloadButton.addEventListener('click', async (event) => {
   }
 });
 
+loadProjectLogo();
 recordVisit();
 showLatestVersion();

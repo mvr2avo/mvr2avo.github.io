@@ -2,10 +2,6 @@
 
 MVR2AVO is a Windows desktop application that reads fixture patch data from MVR files, matches GDTF fixtures to Avolites personalities, and prepares a reviewed patch for Avolites Titan.
 
-## Disclaimer
-
-> Use MVR2AVO at your own risk. The software is provided “as is” without warranty. Always back up your show file before patching; the project is not liable for data loss, incorrect patching, downtime, or any resulting damage.
-
 ## Download
 
 **Current version:** [![Latest version](https://img.shields.io/github/v/release/mvr2avo/mvr2avo.github.io?label=version)](https://github.com/mvr2avo/mvr2avo.github.io/releases/latest)

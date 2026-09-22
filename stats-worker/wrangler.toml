@@ -1,0 +1,11 @@
+name = "mvr2avo-stats"
+main = "index.js"
+compatibility_date = "2026-09-22"
+
+[vars]
+SITE_ORIGINS = "https://mvr2avo.com,https://www.mvr2avo.com,https://mvr2avo.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mvr2avo-stats"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"

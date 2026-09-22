@@ -4,15 +4,17 @@ MVR2AVO is a Windows desktop application that reads fixture patch data from MVR 
 
 ## Download
 
-[Latest Windows release](https://github.com/mvr2avo/mvr2avo.github.io/releases/latest)
+**Current version:** [![Latest version](https://img.shields.io/github/v/release/mvr2avo/mvr2avo.github.io?label=version)](https://github.com/mvr2avo/mvr2avo.github.io/releases/latest)
 
-Each published release contains:
+Both downloads below are for the current version shown above. The links always point to the latest published release:
 
-- [`MVR2AVO-Setup-Windows.exe`](https://github.com/mvr2avo/mvr2avo.github.io/releases/latest/download/MVR2AVO-Setup-Windows.exe) — Windows installer
-- [`MVR2AVO-Portable-Windows.exe`](https://github.com/mvr2avo/mvr2avo.github.io/releases/latest/download/MVR2AVO-Portable-Windows.exe) — portable application
-- [`SHA256SUMS.txt`](https://github.com/mvr2avo/mvr2avo.github.io/releases/latest/download/SHA256SUMS.txt) — SHA-256 checksums
+- **Windows installer:** [`MVR2AVO-Setup-Windows.exe`](https://github.com/mvr2avo/mvr2avo.github.io/releases/latest/download/MVR2AVO-Setup-Windows.exe)
+- **Portable Windows app:** [`MVR2AVO-Portable-Windows.exe`](https://github.com/mvr2avo/mvr2avo.github.io/releases/latest/download/MVR2AVO-Portable-Windows.exe)
+- **SHA-256 checksums:** [`SHA256SUMS.txt`](https://github.com/mvr2avo/mvr2avo.github.io/releases/latest/download/SHA256SUMS.txt)
 
-Download links will work once the first public release is published. To verify a download on Windows, run `Get-FileHash -Algorithm SHA256 .\MVR2AVO-Setup-Windows.exe` in PowerShell and compare the result with `SHA256SUMS.txt`.
+[Release notes and older versions](https://github.com/mvr2avo/mvr2avo.github.io/releases)
+
+To verify a download on Windows, run `Get-FileHash -Algorithm SHA256 .\MVR2AVO-Setup-Windows.exe` in PowerShell and compare the result with `SHA256SUMS.txt`.
 
 ## Feedback and bug reports
 

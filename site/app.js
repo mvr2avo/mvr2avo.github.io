@@ -15,14 +15,26 @@ async function loadProjectLogo() {
 
 async function showLatestVersion() {
   try {
-    const response = await fetch('https://api.github.com/repos/mvr2avo/mvr2avo.github.io/releases/latest');
-    if (!response.ok) return;
-    const release = await response.json();
-    if (/^v\d+\.\d+\.\d+$/.test(release.tag_name)) {
-      document.querySelector('#release-version').textContent = release.tag_name;
+    const releases = [];
+    const releasesPerPage = 100;
+
+    for (let page = 1; ; page += 1) {
+      const response = await fetch(`https://api.github.com/repos/mvr2avo/mvr2avo.github.io/releases?per_page=${releasesPerPage}&page=${page}`);
+      if (!response.ok) return;
+      const pageReleases = await response.json();
+      releases.push(...pageReleases);
+      if (pageReleases.length < releasesPerPage) break;
     }
-    const windowsDownloads = (release.assets || [])
-      .filter((asset) => ['MVR2AVO-Setup-Windows.exe', 'MVR2AVO-Portable-Windows.exe'].includes(asset.name))
+
+    const latestRelease = releases.find((release) => !release.draft && !release.prerelease);
+    if (/^v\d+\.\d+\.\d+$/.test(latestRelease?.tag_name)) {
+      document.querySelector('#release-version').textContent = latestRelease.tag_name;
+    }
+
+    const windowsAssets = ['MVR2AVO-Setup-Windows.exe', 'MVR2AVO-Portable-Windows.exe'];
+    const windowsDownloads = releases
+      .flatMap((release) => release.assets || [])
+      .filter((asset) => windowsAssets.includes(asset.name))
       .reduce((total, asset) => total + (Number.isSafeInteger(asset.download_count) ? asset.download_count : 0), 0);
     downloadCount.textContent = new Intl.NumberFormat('en-US').format(windowsDownloads);
   } catch {
